@@ -1,0 +1,33 @@
+.profileInfoWrapper {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #edf2f6;
+}
+
+.profileInfoWrapper .imageBlock {
+  padding: 5px;
+}
+.profileInfoWrapper .imageBlock img {
+  width: 400px;
+}
+
+.profileInfoWrapper .descriptionBlock {
+  padding: 10px;
+}
+.profileInfoWrapper .descriptionBlock .mainPhoto {
+  max-width: 200px;
+}
+
+.contact {
+  padding-left: 10px;
+}
+.profileInfoWrapper .descriptionBlock p {
+  padding: 0;
+  margin: 0;
+}
+
+.minPhoto {
+  width: 150px;
+  border-radius: 50%;
+}

@@ -1,0 +1,22 @@
+.posts {
+    grid-area: c;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.postsBlock {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+.postsBlock .myPostsBlock {
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,14 @@
+.sideBarFriends h3 {
+    text-align: center;
+}
+
+.sideBarFriends .ul {
+    padding: 0;
+    /*padding: 20px;*/
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
