@@ -1,38 +1,8 @@
 import { profileAPI, usersAPI } from '../api/api';
 import { stopSubmit } from 'redux-form';
+import { photosType, postsType, profileType } from '../types/types';
 
-type postsType = {
-  id: number;
-  message: string;
-  likesCount: number;
-};
-
-type contactsType = {
-  github: string;
-  vk: string;
-  facebook: string;
-  instagram: string;
-  twitter: string;
-  website: string;
-  youtube: string;
-  mainLink: string;
-};
-
-type photosType = {
-  small: string | null;
-  large: string | null;
-};
-
-type profileType = {
-  userId: number;
-  lookingForAJob: boolean;
-  lookingForAJobDescription: string;
-  fullName: string;
-  contacts: contactsType;
-  photos: photosType;
-};
-
-let initialState = {
+const initialState = {
   posts: [
     { id: 1, message: 'test_message_profile ', likesCount: 15 },
     { id: 2, message: 'test_message_profile ', likesCount: 10 },
@@ -149,11 +119,11 @@ export const savePhotoSuccess = (
 });
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
-  let response = await usersAPI.getProfile(userId);
+  const response = await usersAPI.getProfile(userId);
   dispatch(setUserProfile(response.data));
 };
 export const savePhoto = (file: any) => async (dispatch: any) => {
-  let response = await profileAPI.savePhoto(file);
+  const response = await profileAPI.savePhoto(file);
 
   if (response.data.resultCode === 0) {
     dispatch(savePhotoSuccess(response.data.data.photos));
@@ -174,20 +144,18 @@ export const saveProfile =
     }
   };
 export const getStatus = (userId: number) => async (dispatch: any) => {
-  let response = await profileAPI.getStatus(userId);
+  const response = await profileAPI.getStatus(userId);
 
   dispatch(setStatus(response.data));
 };
 
 export const updateStatus = (status: string) => async (dispatch: any) => {
   try {
-    let response = await profileAPI.updateStatus(status);
+    const response = await profileAPI.updateStatus(status);
 
     if (response.data.resultCode === 0) {
       dispatch(setStatus(status));
     }
-  } catch (error) {
-    // логика для отображения, просмотра, и т.д. ошибок
-  }
+  } catch (error) {}
 };
 export default profileReducer;
