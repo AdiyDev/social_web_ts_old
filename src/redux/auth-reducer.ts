@@ -1,21 +1,15 @@
 import { stopSubmit } from 'redux-form';
 import { authAPI, securityAPI } from '../api/api';
 
-export type initialStateType = {
-  userId: number | null;
-  email: string | null;
-  login: string | null;
-  isAuth: boolean;
-  captchaUrl: string | null;
-};
-
-const initialState: initialStateType = {
-  userId: null,
-  email: null,
-  login: null,
+const initialState = {
+  userId: null as number | null,
+  email: null as string | null,
+  login: null as string | null,
   isAuth: false,
   captchaUrl: null
 };
+
+export type initialStateType = typeof initialState;
 
 const authReducer = (state = initialState, action: any): initialStateType => {
   switch (action.type) {
@@ -53,15 +47,15 @@ export const setAuthUserData = (
   payload: { userId, email, login, isAuth }
 });
 
-export type getCaptchaUrlSuccess = {
+export type getCaptchaUrlSuccessType = {
   type: typeof GET_CAPTCHA_URL_SUCCESS;
   payload: { captchaUrl: string };
 };
 
-const GET_CAPTCHA_URL_SUCCESS = 'samurai-network/auth/GET_CAPTCHA_URL_SUCCESS';
+const GET_CAPTCHA_URL_SUCCESS = 'react-first/auth/GET_CAPTCHA_URL_SUCCESS';
 export const getCaptchaUrlSuccess = (
   captchaUrl: string
-): getCaptchaUrlSuccess => ({
+): getCaptchaUrlSuccessType => ({
   type: GET_CAPTCHA_URL_SUCCESS,
   payload: { captchaUrl }
 });
@@ -76,7 +70,7 @@ export const getAuthUserData = () => async (dispatch: any) => {
 };
 
 export const login =
-  (email: string, password: string, rememberMe: boolean, captcha: any) =>
+  (email: string, password: string, rememberMe: boolean, captcha: null) =>
   async (dispatch: any) => {
     const response = await authAPI.login(email, password, rememberMe, captcha);
     if (response.data.resultCode === 0) {
