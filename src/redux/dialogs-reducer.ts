@@ -20,12 +20,12 @@ const initialState = {
     { id: 6, name: 'user6' }
   ] as Array<dialogType>,
   messages: [
-    { id: 1, message: 'test_message1' },
-    { id: 2, message: 'test_message2' },
-    { id: 3, message: 'test_message3' },
-    { id: 4, message: 'test_message4' },
-    { id: 5, message: 'test_message5' },
-    { id: 6, message: 'test_message6' }
+    { id: 1, message: 'test_message_dialogs' },
+    { id: 2, message: 'test_message_dialogs' },
+    { id: 3, message: 'test_message_dialogs' },
+    { id: 4, message: 'test_message_dialogs' },
+    { id: 5, message: 'test_message_dialogs' },
+    { id: 6, message: 'test_message_dialogs' }
   ] as Array<messageType>
 };
 
