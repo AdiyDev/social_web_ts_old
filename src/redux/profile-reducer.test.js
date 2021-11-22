@@ -1,7 +1,7 @@
 import profileReducer, {
   addPostActionCreator,
   deletePost
-} from './profile-reducer';
+} from './profile-reducer'
 const state = {
   posts: [
     { id: 1, message: 'Hi, how are you? ', likesCount: 15 },
@@ -9,48 +9,48 @@ const state = {
     { id: 3, message: 'Kak tebe takoe Elon Sobaks? ', likesCount: 7 },
     { id: 6, message: 'Kot poel kaktus ', likesCount: 1 }
   ]
-};
+}
 
 test('Length of posts should be incremented', () => {
   //1. test data
-  const action = addPostActionCreator('test text');
+  const action = addPostActionCreator('test text')
 
   //2.action
-  const newState = profileReducer(state, action);
+  const newState = profileReducer(state, action)
 
   //3. expectation ожидаем, что длина постов будет равна пяти
-  expect(newState.posts.length).toBe(5);
-});
+  expect(newState.posts.length).toBe(5)
+})
 
 test('Message of the new post will be correct', () => {
   //1. test data
-  const action = addPostActionCreator('test text');
+  const action = addPostActionCreator('test text')
 
   //2.action
-  const newState = profileReducer(state, action);
+  const newState = profileReducer(state, action)
 
   //3. expectation ожидаем, что длина постов будет равна пяти
-  expect(newState.posts[4].message).toBe('test text');
-});
+  expect(newState.posts[4].message).toBe('test text')
+})
 
 test('After deleting messages from post will be arr decrement', () => {
   //1. test data
-  const action = deletePost(1);
+  const action = deletePost(1)
 
   //2.action
-  const newState = profileReducer(state, action);
+  const newState = profileReducer(state, action)
 
   //3. expectation ожидаем, что длина постов будет равна 3
-  expect(newState.posts[4].message).toBe(3);
-});
+  expect(newState.posts[4].message).toBe(3)
+})
 
 test("After deleting length shoudn't decrement if id is incorrect", () => {
   //1. test data
-  const action = deletePost(1000);
+  const action = deletePost(1000)
 
   //2.action
-  const newState = profileReducer(state, action);
+  const newState = profileReducer(state, action)
 
   //3. expectation ожидаем, что длина постов будет равна 3
-  expect(newState.posts.length).toBe(4);
-});
+  expect(newState.posts.length).toBe(4)
+})

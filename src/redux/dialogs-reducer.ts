@@ -1,14 +1,14 @@
-export type initialStateType = typeof initialState;
+export type initialStateType = typeof initialState
 
 type dialogType = {
-  id: number;
-  name: string;
-};
+  id: number
+  name: string
+}
 
 type messageType = {
-  id: number;
-  message: string;
-};
+  id: number
+  message: string
+}
 
 const initialState = {
   dialogs: [
@@ -27,34 +27,34 @@ const initialState = {
     { id: 5, message: 'test_message_dialogs' },
     { id: 6, message: 'test_message_dialogs' }
   ] as Array<messageType>
-};
+}
 
 const dialogsReducer = (
   state = initialState,
-  action: any
+  action: sendMessageCreatorActionType
 ): initialStateType => {
   switch (action.type) {
     case SEND_MESSAGE:
       return {
         ...state,
         messages: [...state.messages, { id: 7, message: action?.payload }]
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
 export type sendMessageCreatorActionType = {
-  type: typeof SEND_MESSAGE;
-  payload: string;
-};
+  type: typeof SEND_MESSAGE
+  payload: string
+}
 
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = 'SEND-MESSAGE'
 export const sendMessage = (
   newMessageBody: string
 ): sendMessageCreatorActionType => ({
   type: SEND_MESSAGE,
   payload: newMessageBody
-});
+})
 
-export default dialogsReducer;
+export default dialogsReducer
