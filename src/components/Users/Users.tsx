@@ -1,18 +1,18 @@
-import React from 'react';
-import Paginator from '../common/Paginator/Paginator';
-import User from './User';
-import { usersType } from '../../types/types';
+import React from 'react'
+import Paginator from '../common/Paginator/Paginator'
+import User from './User'
+import { UsersType } from '../../types/types'
 
 type propsType = {
-  currentPage: number;
-  totalUsersCount: number;
-  pageSize: number;
-  onPageChanged: (pageNumber: number) => void;
-  users: Array<usersType>;
-  followingInProgress: Array<number>;
-  unfollow: (userId: number) => void;
-  follow: (userId: number) => void;
-};
+  currentPage: number
+  totalUsersCount: number
+  pageSize: number
+  onPageChanged: (pageNumber: number) => void
+  users: Array<UsersType>
+  followingInProgress: Array<number>
+  unfollow: (userId: number) => void
+  follow: (userId: number) => void
+}
 
 const Users: React.FC<propsType> = ({
   currentPage,
@@ -42,7 +42,7 @@ const Users: React.FC<propsType> = ({
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Users;
+export default Users

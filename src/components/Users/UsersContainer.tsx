@@ -12,7 +12,7 @@ import {
   getTotalUsersCount,
   getUsers
 } from '../../redux/users-selectors'
-import { usersType } from '../../types/types'
+import { UsersType } from '../../types/types'
 import { AppStateType } from '../../redux/redux-store'
 
 type mapStatePropsType = {
@@ -21,7 +21,7 @@ type mapStatePropsType = {
   isFetching: boolean
   totalUsersCount: number
   followingInProgress: Array<number>
-  users: Array<usersType>
+  users: Array<UsersType>
 }
 type mapDispatchPropsType = {
   getUsers: (currentPage: number, pageSize: number) => void

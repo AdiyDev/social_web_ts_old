@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { usersType } from '../types/types'
+import { UsersType } from '../types/types'
 export const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
   withCredentials: true,
@@ -18,7 +18,7 @@ export enum ResultCodesForCaptchaEnum {
 }
 
 export type getItemsType = {
-  items: Array<usersType>
+  items: Array<UsersType>
   totalCount: number
   error: string | null
 }
