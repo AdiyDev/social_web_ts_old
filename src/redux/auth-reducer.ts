@@ -1,10 +1,7 @@
 import { stopSubmit } from 'redux-form'
-import {
-  authAPI,
-  ResultCodesEnum,
-  ResultCodesForCaptcha,
-  securityAPI
-} from '../api/api'
+import { authAPI } from './../api/auth-api'
+import { securityAPI } from './../api/security-api'
+import { ResultCodesEnum, ResultCodesForCaptcha } from '../api/api'
 
 const initialState = {
   userId: null as number | null,

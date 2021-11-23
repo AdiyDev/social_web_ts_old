@@ -1,9 +1,9 @@
 import { Dispatch } from 'redux'
 import { ThunkAction } from 'redux-thunk'
-import { usersAPI } from '../api/api'
 import { usersType } from '../types/types'
 import { updateObjectInArray } from '../utils/object-helper'
 import { AppStateType, InferActionsTypes } from './redux-store'
+import { usersAPI } from './../api/users-api'
 
 const initialState = {
   users: [] as Array<usersType>,

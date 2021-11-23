@@ -1,6 +1,7 @@
-import { profileAPI, usersAPI } from '../api/api'
 import { stopSubmit } from 'redux-form'
 import { photosType, postsType, profileType } from '../types/types'
+import { usersAPI } from './../api/users-api'
+import { profileAPI } from './../api/profile-api'
 
 const initialState = {
   posts: [
@@ -119,7 +120,7 @@ export const savePhotoSuccess = (
 })
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
-  const response = await usersAPI.getProfile(userId)
+  const response = await profileAPI.getProfile(userId)
   dispatch(setUserProfile(response.data))
 }
 export const savePhoto = (file: any) => async (dispatch: any) => {
