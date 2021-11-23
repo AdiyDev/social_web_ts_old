@@ -11,16 +11,13 @@ const initialState = {
   ] as Array<friendType>
 }
 
-export type initialStateType = typeof initialState
 const sidebarReducer = (
   state = initialState,
-  action: actionType
+  action: any
 ): initialStateType => {
   return state
 }
 
-type actionType = {
-  type: any
-}
-
 export default sidebarReducer
+
+export type initialStateType = typeof initialState
