@@ -1,49 +1,49 @@
-import React, { Component, Suspense } from 'react';
-import './App.css';
-import HeaderContainer from './components/Header/HeaderContainer';
-import Navbar from './components/Navbar/Navbar';
-import News from './components/News/News';
-import Music from './components/Music/Music';
-import UsersContainer from './components/Users/UsersContainer';
-import Settings from './components/Settings/Settings';
-import LoginPage from './components/Login/Login';
+import React, { Component, Suspense } from 'react'
+import './App.css'
+import HeaderContainer from './components/Header/HeaderContainer'
+import Navbar from './components/Navbar/Navbar'
+import News from './components/News/News'
+import Music from './components/Music/Music'
+import UsersContainer from './components/Users/UsersContainer'
+import Settings from './components/Settings/Settings'
+import LoginPage from './components/Login/Login'
 import {
   Route,
   withRouter,
   BrowserRouter,
   Redirect,
   Switch
-} from 'react-router-dom';
-import { connect, Provider } from 'react-redux';
-import { initializeApp } from './redux/app-reducer';
-import { compose } from 'redux';
-import Preloader from './components/common/Preloader/Preloader';
-import store from './redux/redux-store';
+} from 'react-router-dom'
+import { connect, Provider } from 'react-redux'
+import { initializeApp } from './redux/app-reducer'
+import { compose } from 'redux'
+import Preloader from './components/common/Preloader/Preloader'
+import store from './redux/redux-store'
 
 const DialogsContainer = React.lazy(() =>
   import('./components/Dialogs/DialogsContainer')
-);
+)
 const ProfileContainer = React.lazy(() =>
   import('./components/Profile/ProfileContainer')
-);
+)
 class App extends Component {
   catchAllUnhandledErrors = (reason, promise) => {
-    alert('Some error occured');
+    alert('Some error occured')
     //console.error(promiseRejectionEvent);
-  };
+  }
   componentDidMount() {
-    this.props.initializeApp();
-    window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors);
+    this.props.initializeApp()
+    window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
   }
   componentWillUnmount() {
     window.removeEventListener(
       'unhandledrejection',
       this.catchAllUnhandledErrors
-    );
+    )
   }
   render() {
     if (!this.props.initialized) {
-      return <Preloader />;
+      return <Preloader />
     }
     return (
       <div className="app-wrapper">
@@ -84,18 +84,18 @@ class App extends Component {
           </Suspense>
         </div>
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => ({
   initialized: state.app.initialized
-});
+})
 
 let AppContainer = compose(
   withRouter,
   connect(mapStateToProps, { initializeApp })
-)(App);
+)(App)
 
 const SocialWebApp = props => {
   return (
@@ -104,7 +104,7 @@ const SocialWebApp = props => {
         <AppContainer />
       </Provider>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default SocialWebApp;
+export default SocialWebApp
