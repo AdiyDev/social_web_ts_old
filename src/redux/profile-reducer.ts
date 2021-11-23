@@ -22,7 +22,7 @@ const profileReducer = (
 ): InitialStateType => {
   switch (action.type) {
     case 'SN/PROFILE/ADD-POST': {
-      let newPost = {
+      const newPost = {
         id: 5,
         message: action.newPostText,
         likesCount: 0
@@ -81,7 +81,7 @@ export const getUserProfile =
 export const getStatus =
   (userId: number): ThunkType =>
   async dispatch => {
-    let data = await profileAPI.getStatus(userId)
+    const data = await profileAPI.getStatus(userId)
     dispatch(actions.setStatus(data))
   }
 
@@ -89,7 +89,7 @@ export const updateStatus =
   (status: string): ThunkType =>
   async dispatch => {
     try {
-      let data = await profileAPI.updateStatus(status)
+      const data = await profileAPI.updateStatus(status)
 
       if (data.resultCode === ResultCodesEnum.Success) {
         dispatch(actions.setStatus(status))
@@ -100,7 +100,7 @@ export const updateStatus =
 export const savePhoto =
   (file: File): ThunkType =>
   async dispatch => {
-    let data = await profileAPI.savePhoto(file)
+    const data = await profileAPI.savePhoto(file)
 
     if (data.resultCode === ResultCodesEnum.Success) {
       dispatch(actions.savePhotoSuccess(data.data.photos))

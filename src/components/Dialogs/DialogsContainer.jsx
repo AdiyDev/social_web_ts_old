@@ -4,13 +4,13 @@ import { connect } from 'react-redux'
 import { withAuthRedirect } from './../hoc/withAuthRedirect'
 import { compose } from 'redux'
 
-let mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     dialogsPage: state.dialogsPage
   }
 }
 
-let mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     sendMessage: newMessageBody => {
       dispatch(actions.sendMessage(newMessageBody))

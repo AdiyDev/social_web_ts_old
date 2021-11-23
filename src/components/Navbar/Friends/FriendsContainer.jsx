@@ -1,13 +1,13 @@
 import Friends from './Friends'
 import { connect } from 'react-redux'
 
-let mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     sidebar: state.sidebar
   }
 }
 
-let mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {}
 }
 
