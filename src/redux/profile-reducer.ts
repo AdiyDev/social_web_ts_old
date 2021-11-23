@@ -1,6 +1,5 @@
 import { stopSubmit } from 'redux-form'
 import { photosType, postsType, profileType } from '../types/types'
-import { usersAPI } from './../api/users-api'
 import { profileAPI } from './../api/profile-api'
 
 const initialState = {
@@ -120,41 +119,39 @@ export const savePhotoSuccess = (
 })
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
-  const response = await profileAPI.getProfile(userId)
-  dispatch(setUserProfile(response.data))
+  const data = await profileAPI.getProfile(userId)
+  dispatch(setUserProfile(data))
 }
 export const savePhoto = (file: any) => async (dispatch: any) => {
-  const response = await profileAPI.savePhoto(file)
+  const data = await profileAPI.savePhoto(file)
 
-  if (response.data.resultCode === 0) {
-    dispatch(savePhotoSuccess(response.data.data.photos))
+  if (data.resultCode === 0) {
+    dispatch(savePhotoSuccess(data.data.photos))
   }
 }
 export const saveProfile =
   (profile: profileType) => async (dispatch: any, getState: any) => {
     const userId = getState().auth.userId
-    const response = await profileAPI.saveProfile(profile)
+    const data = await profileAPI.saveProfile(profile)
 
-    if (response.data.resultCode === 0) {
+    if (data.resultCode === 0) {
       dispatch(getUserProfile(userId))
     } else {
-      dispatch(
-        stopSubmit('edit-profile', { _error: response.data.messages[0] })
-      )
-      return Promise.reject(response.data.messages[0])
+      dispatch(stopSubmit('edit-profile', { _error: data.messages[0] }))
+      return Promise.reject(data.messages[0])
     }
   }
 export const getStatus = (userId: number) => async (dispatch: any) => {
-  const response = await profileAPI.getStatus(userId)
+  const data = await profileAPI.getStatus(userId)
 
-  dispatch(setStatus(response.data))
+  dispatch(setStatus(data))
 }
 
 export const updateStatus = (status: string) => async (dispatch: any) => {
   try {
-    const response = await profileAPI.updateStatus(status)
+    const data = await profileAPI.updateStatus(status)
 
-    if (response.data.resultCode === 0) {
+    if (data.resultCode === 0) {
       dispatch(setStatus(status))
     }
   } catch (error) {}

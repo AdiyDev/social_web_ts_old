@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { usersType } from '../types/types'
 export const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
   withCredentials: true,
@@ -12,6 +13,18 @@ export enum ResultCodesEnum {
   Error = 1
 }
 
-export enum ResultCodesForCaptcha {
+export enum ResultCodesForCaptchaEnum {
   CaptchaIsRequired = 10
+}
+
+export type getItemsType = {
+  items: Array<usersType>
+  totalCount: number
+  error: string | null
+}
+
+export type APIResponseType<D = {}, RC = ResultCodesEnum> = {
+  data: D
+  resultCode: RC
+  messages: Array<string>
 }
