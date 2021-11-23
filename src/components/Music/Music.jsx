@@ -1,12 +1,7 @@
-import React from "react";
-import s from "./Music.modules.css";
+import React from 'react'
 
-const Music = (props) => {
-    return (
-        <div>
-            Music
-        </div>
-    )
+const Music = props => {
+  return <div>Music</div>
 }
 
-export default Music;
+export default Music
