@@ -8,7 +8,7 @@ type PropsType = {
 }
 
 const Friend: React.FC<PropsType> = props => {
-  let path = '/' + props.id
+  const path = '/' + props.id
 
   return (
     <li className={s.item}>

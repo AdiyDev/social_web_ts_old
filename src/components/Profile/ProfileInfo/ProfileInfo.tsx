@@ -23,7 +23,7 @@ const ProfileInfo: React.FC<PropsType> = ({
   savePhoto,
   saveProfile
 }) => {
-  let [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState(false)
 
   if (!profile) {
     return <Preloader />

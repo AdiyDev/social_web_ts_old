@@ -5,7 +5,7 @@ import { withAuthRedirect } from '../hoc/withAuthRedirect'
 import { compose } from 'redux'
 import { AppStateType } from '../../redux/redux-store'
 
-let mapStateToProps = (state: AppStateType) => {
+const mapStateToProps = (state: AppStateType) => {
   return {
     dialogsPage: state.dialogsPage
   }
