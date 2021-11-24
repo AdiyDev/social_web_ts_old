@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import styles from './Paginator.module.css';
-import cn from 'classnames';
+import React, { useState } from 'react'
+import styles from './Paginator.module.css'
+import cn from 'classnames'
 
 type PropsType = {
-  totalItemsCount: number;
-  pageSize: number;
-  currentPage: number;
-  onPageChanged: (pageNumber: number) => void;
-  portionSize?: number;
-};
+  totalItemsCount: number
+  pageSize: number
+  currentPage: number
+  onPageChanged: (pageNumber: number) => void
+  portionSize?: number
+}
 
 const Paginator: React.FC<PropsType> = ({
   totalItemsCount,
@@ -17,24 +17,24 @@ const Paginator: React.FC<PropsType> = ({
   onPageChanged,
   portionSize = 10
 }) => {
-  const pagesCount = Math.ceil(totalItemsCount / pageSize);
+  const pagesCount = Math.ceil(totalItemsCount / pageSize)
 
-  let pages = [];
+  let pages = []
   for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
+    pages.push(i)
   }
 
-  const portionCount = Math.ceil(pagesCount / portionSize);
-  const [portionNumber, setPortionNumber] = useState(1);
-  const leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
-  const rightPortionPageNumber = portionNumber * portionSize;
+  const portionCount = Math.ceil(pagesCount / portionSize)
+  const [portionNumber, setPortionNumber] = useState(1)
+  const leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
+  const rightPortionPageNumber = portionNumber * portionSize
 
   return (
     <div className={cn(styles.paginator)}>
       {portionNumber > 1 && (
         <button
           onClick={() => {
-            setPortionNumber(portionNumber - 1);
+            setPortionNumber(portionNumber - 1)
           }}
         >
           PREV
@@ -54,24 +54,24 @@ const Paginator: React.FC<PropsType> = ({
               )}
               key={p}
               onClick={e => {
-                onPageChanged(p);
+                onPageChanged(p)
               }}
             >
               {p}
             </span>
-          );
+          )
         })}
       {portionCount > portionNumber && (
         <button
           onClick={() => {
-            setPortionNumber(portionNumber + 1);
+            setPortionNumber(portionNumber + 1)
           }}
         >
           NEXT
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Paginator;
+export default Paginator
