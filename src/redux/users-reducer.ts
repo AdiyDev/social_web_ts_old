@@ -3,7 +3,7 @@ import { UsersType } from '../types/types'
 import { BaseThunkType, InferActionsTypes } from './redux-store'
 import { Dispatch } from 'redux'
 import { usersAPI } from '../api/users-api'
-import { ResultCodesEnum } from '../api/api'
+import { APIResponseType, ResultCodesEnum } from '../api/api'
 
 const initialState = {
   users: [] as Array<UsersType>,
@@ -99,13 +99,13 @@ export const requestUsers = (page: number, pageSize: number): ThunkType => {
 const _followUnfollowFlow = async (
   dispatch: Dispatch<ActionsTypes>,
   userId: number,
-  apiMethod: any,
+  apiMethod: (userId: number) => Promise<APIResponseType>,
   actionCreator: (userId: number) => ActionsTypes
 ) => {
   dispatch(actions.toggleFollowingProgress(true, userId))
-  const response = await apiMethod(userId)
+  const data = await apiMethod(userId)
 
-  if (response.data.resultCode === ResultCodesEnum.Success) {
+  if (data.resultCode === ResultCodesEnum.Success) {
     dispatch(actionCreator(userId))
   }
   dispatch(actions.toggleFollowingProgress(false, userId))
