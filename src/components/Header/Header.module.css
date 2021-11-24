@@ -1,14 +1,13 @@
 .header {
-    grid-area: h;
-    background-color: #888da8;
-    padding: 5px;
-    
+  grid-area: h;
+  background-color: #888da8;
+  padding: 5px;
 }
 
 .header img {
-    padding: 5px;
-    width: 70px;
-    border-radius: 50%;
+  padding: 5px;
+  width: 70px;
+  border-radius: 50%;
 }
 
 .header .loginBlock {
