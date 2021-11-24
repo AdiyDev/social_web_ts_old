@@ -29,8 +29,8 @@ const ProfileInfo: React.FC<PropsType> = ({
     return <Preloader />
   }
 
-  const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement> | any) => {
-    if (e.target.files.length) {
+  const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.length) {
       savePhoto(e.target.files[0])
     }
   }
