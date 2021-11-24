@@ -38,4 +38,8 @@ export type UsersType = {
   followed: boolean
   totalCount: number
   error: string
+  location: {
+    country: string
+    city: string
+  }
 }
