@@ -28,10 +28,11 @@ const Dialogs: React.FC<PropsType> = props => {
 
   return (
     <div className={s.dialogs}>
-      <ul className={s.dialogsItems}>{dialogsElements}</ul>
+      <ul className={s.dialogsItems}>
+        <li>{dialogsElements}</li>
+      </ul>
       <ul className={s.messages}>
-        {messegesElements}
-        {/* @ts-ignore */}
+        <li>{messegesElements}</li>
         <AddMessageForm onSubmit={addNewMessage} />
       </ul>
     </div>
