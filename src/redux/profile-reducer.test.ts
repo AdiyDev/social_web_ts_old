@@ -2,10 +2,10 @@ import profileReducer, { actions } from './profile-reducer'
 
 const state = {
   posts: [
-    { id: 1, message: 'Hi, how are you?', likesCount: 12 },
-    { id: 2, message: "It's my first post", likesCount: 11 },
-    { id: 3, message: 'Blabla', likesCount: 11 },
-    { id: 4, message: 'Dada', likesCount: 11 }
+    { id: 1, message: 'test_message_1', likesCount: 12 },
+    { id: 2, message: 'test_message_2', likesCount: 11 },
+    { id: 3, message: 'test_message_3', likesCount: 11 },
+    { id: 4, message: 'test_message_4', likesCount: 11 }
   ],
   profile: null,
   status: '',
