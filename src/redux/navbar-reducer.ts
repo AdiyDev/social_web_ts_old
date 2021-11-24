@@ -1,4 +1,4 @@
-type friendType = {
+export type friendType = {
   id: number
   name: string
 }
@@ -11,10 +11,7 @@ const initialState = {
   ] as Array<friendType>
 }
 
-const sidebarReducer = (
-  state = initialState,
-  action: any
-): initialStateType => {
+const sidebarReducer = (state = initialState): initialStateType => {
   return state
 }
 
