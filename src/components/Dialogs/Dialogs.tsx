@@ -28,11 +28,9 @@ const Dialogs: React.FC<PropsType> = props => {
 
   return (
     <div className={s.dialogs}>
-      <ul className={s.dialogsItems}>
-        <li>{dialogsElements}</li>
-      </ul>
+      <ul className={s.dialogsItems}>{dialogsElements}</ul>
       <ul className={s.messages}>
-        <li>{messegesElements}</li>
+        {messegesElements}
         <AddMessageForm onSubmit={addNewMessage} />
       </ul>
     </div>
