@@ -10,7 +10,7 @@ const initialState = {
   pageSize: 10,
   totalUsersCount: 0,
   currentPage: 1,
-  isFetching: true,
+  isFetching: false,
   followingInProgress: [] as Array<number>, //array of users ids
   filter: {
     term: '',
@@ -100,19 +100,23 @@ export const requestUsers = (
   filter: FilterType
 ): ThunkType => {
   return async (dispatch, getState) => {
-    dispatch(actions.toggleIsFetching(true))
-    dispatch(actions.setCurrentPage(page))
-    dispatch(actions.setFilter(filter))
+    try {
+      dispatch(actions.toggleIsFetching(true))
+      dispatch(actions.setCurrentPage(page))
+      dispatch(actions.setFilter(filter))
 
-    const data = await usersAPI.getUsers(
-      page,
-      pageSize,
-      filter.term,
-      filter.friend
-    )
-    dispatch(actions.toggleIsFetching(false))
-    dispatch(actions.setUsers(data.items))
-    dispatch(actions.setTotalUsersCount(data.totalCount))
+      const data = await usersAPI.getUsers(
+        page,
+        pageSize,
+        filter.term,
+        filter.friend
+      )
+      dispatch(actions.setUsers(data?.items))
+      dispatch(actions.setTotalUsersCount(data?.totalCount))
+    } catch (e) {
+    } finally {
+      dispatch(actions.toggleIsFetching(false))
+    }
   }
 }
 

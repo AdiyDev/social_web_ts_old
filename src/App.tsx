@@ -4,7 +4,7 @@ import HeaderContainer from './components/Header/HeaderContainer'
 import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 import Music from './components/Music/Music'
-import UsersContainer from './components/Users/UsersContainer'
+import { UsersPage } from './components/Users/UsersPage'
 import Settings from './components/Settings/Settings'
 import LoginPage from './components/Login/Login'
 import {
@@ -78,9 +78,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
               <Route path="/music" render={() => <Music />} />
               <Route
                 path="/users"
-                render={() => (
-                  <UsersContainer pageTitle={'Заголовок Страницы'} />
-                )}
+                render={() => <UsersPage pageTitle={'Заголовок Страницы'} />}
               />
               <Route path="/settings" render={() => <Settings />} />
               <Route path="/login" render={() => <LoginPage />} />
