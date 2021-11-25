@@ -11,7 +11,7 @@ const initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
-  followingInProgress: [] as Array<number>, //array of users ids
+  followingInProgress: [] as Array<number>,
   filter: {
     term: '',
     friend: null as null | boolean
