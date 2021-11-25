@@ -17,7 +17,7 @@ export enum ResultCodesForCaptchaEnum {
   CaptchaIsRequired = 10
 }
 
-export type getItemsType = {
+export type GetItemsType = {
   items: Array<UsersType>
   totalCount: number
   error: string | null

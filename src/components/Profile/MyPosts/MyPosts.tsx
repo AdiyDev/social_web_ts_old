@@ -2,10 +2,10 @@ import React from 'react'
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
 import AddPostForm, { AddPostFormValuesType } from './AddPostForm/AddPostForm'
-import { postsType } from '../../../types/types'
+import { PostType } from '../../../types/types'
 
 export type MapPropsType = {
-  posts: Array<postsType>
+  posts: Array<PostType>
 }
 export type DispatchPropsType = {
   addPost: (newPostText: string) => void

@@ -1,6 +1,6 @@
 import { FormAction, stopSubmit } from 'redux-form'
 import { ResultCodesEnum } from '../api/api'
-import { PhotosType, postsType, ProfileType } from '../types/types'
+import { PhotosType, PostType, ProfileType } from '../types/types'
 import { profileAPI } from './../api/profile-api'
 import { BaseThunkType, InferActionsTypes } from './redux-store'
 
@@ -10,7 +10,7 @@ const initialState = {
     { id: 2, message: 'test_message_profile ', likesCount: 10 },
     { id: 3, message: 'test_message_profile ', likesCount: 7 },
     { id: 4, message: 'test_message_profile ', likesCount: 1 }
-  ] as Array<postsType>,
+  ] as Array<PostType>,
   profile: null as ProfileType | null,
   status: '',
   newPostText: ''

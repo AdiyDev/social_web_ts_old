@@ -15,6 +15,7 @@
     "@types/react-test-renderer": "^17.0.1",
     "@types/redux-form": "^8.3.3",
     "axios": "^0.21.1",
+    "formik": "^2.2.9",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
