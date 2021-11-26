@@ -43,6 +43,7 @@ export const UsersSearchForm: React.FC<PropsType> = React.memo(props => {
   return (
     <div>
       <Formik
+        enableReinitialize
         initialValues={{
           term: filter.term,
           friend: String(filter.friend) as FriendFormType
