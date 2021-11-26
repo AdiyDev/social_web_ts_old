@@ -73,7 +73,7 @@ export const Users: React.FC<propsType> = () => {
       pathname: '/users',
       search: queryString.stringify(query)
     })
-  }, [filter, currentPage]) // eslint-disable-line
+  }, [filter, currentPage, followingInProgress]) // eslint-disable-line
 
   const onPageChanged = (pageNumber: number) => {
     dispatch(requestUsers(pageNumber, pageSize, filter))

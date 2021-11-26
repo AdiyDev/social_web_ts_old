@@ -30,7 +30,7 @@ const User: React.FC<PropsType> = ({
           </NavLink>
         </div>
         <div>
-          {user.followed ? (
+          {!user.followed ? (
             <button
               disabled={followingInProgress.some(id => id === user.id)}
               onClick={() => {
