@@ -5,15 +5,18 @@ import {
   GetStringKeys,
   Input
 } from '../../../common/FormsControls/FormsControls'
-import { required } from '../../../../utils/validators/validators'
+import {
+  maxLengthCreator,
+  required
+} from '../../../../utils/validators/validators'
 
 type PropsType = {}
-
 export type AddPostFormValuesType = {
   newPostText: string
 }
-
 type AddPostFormValuesTypeKeys = GetStringKeys<AddPostFormValuesType>
+
+const maxLength30 = maxLengthCreator(30)
 
 const AddPostForm: React.FC<
   InjectedFormProps<AddPostFormValuesType, PropsType> & PropsType
@@ -24,7 +27,7 @@ const AddPostForm: React.FC<
         {createField<AddPostFormValuesTypeKeys>(
           'Your post',
           'newPostText',
-          [required],
+          [required, maxLength30],
           Input
         )}
       </div>

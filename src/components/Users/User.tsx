@@ -34,19 +34,19 @@ const User: React.FC<PropsType> = ({
             <button
               disabled={followingInProgress.some(id => id === user.id)}
               onClick={() => {
-                follow(user.id)
+                unfollow(user.id)
               }}
             >
-              Follow
+              Unfollow
             </button>
           ) : (
             <button
               disabled={followingInProgress.some(id => id === user.id)}
               onClick={() => {
-                unfollow(user.id)
+                follow(user.id)
               }}
             >
-              Unfollow
+              Follow
             </button>
           )}
         </div>

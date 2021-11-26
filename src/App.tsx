@@ -6,7 +6,7 @@ import News from './components/News/News'
 import Music from './components/Music/Music'
 import { UsersPage } from './components/Users/UsersPage'
 import Settings from './components/Settings/Settings'
-import LoginPage from './components/Login/Login'
+import { LoginPage } from './components/Login/Login'
 import {
   Route,
   withRouter,
@@ -100,7 +100,7 @@ const AppContainer = compose<React.ComponentType>(
   connect(mapStateToProps, { initializeApp })
 )(App)
 
-const SocialWebApp = (props: any) => {
+const SocialWebApp: React.FC = () => {
   return (
     <BrowserRouter>
       <Provider store={store}>

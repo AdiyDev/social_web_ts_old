@@ -7,7 +7,7 @@ import {
 } from '../../../utils/validators/validators'
 import { NewMessageFormValuesType } from '../Dialogs'
 
-const maxLength50 = maxLengthCreator(50)
+const maxLength30 = maxLengthCreator(30)
 
 type NewMessageFormValuesKeysType = Extract<
   keyof NewMessageFormValuesType,
@@ -24,7 +24,7 @@ const AddMessageForm: React.FC<
         {createField<NewMessageFormValuesKeysType>(
           'Enter your message',
           'newMessageBody',
-          [required, maxLength50],
+          [required, maxLength30],
           Textarea
         )}
         <button>add message</button>
