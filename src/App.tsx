@@ -7,6 +7,8 @@ import Music from './components/Music/Music'
 import { UsersPage } from './components/Users/UsersPage'
 import Settings from './components/Settings/Settings'
 import { LoginPage } from './components/Login/Login'
+import FriendsContainer from './components/Navbar/Friends/FriendsContainer'
+import { Header } from './components/Header/Header'
 import {
   Route,
   withRouter,
@@ -20,14 +22,12 @@ import { initializeApp } from './redux/app-reducer'
 import { compose } from 'redux'
 import Preloader from './components/common/Preloader/Preloader'
 import store, { AppStateType } from './redux/redux-store'
-import { Layout, Menu, Breadcrumb } from 'antd'
+import { Layout, Menu, Breadcrumb, Divider } from 'antd'
 import {
   UserOutlined,
   LaptopOutlined,
   SettingOutlined
 } from '@ant-design/icons'
-import FriendsContainer from './components/Navbar/Friends/FriendsContainer'
-import { Header } from './components/Header/Header'
 
 const { SubMenu } = Menu
 const { Content, Footer, Sider } = Layout
@@ -116,6 +116,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   </Menu.Item>
                   <Menu.Item key="12">option12</Menu.Item>
                 </SubMenu>
+                <Divider />
                 <Route path="" render={() => <FriendsContainer />} />
               </Menu>
             </Sider>

@@ -30,11 +30,11 @@ const User: React.FC<PropsType> = ({
           </NavLink>
         </div>
         <div>
-          {!user.followed ? (
+          {user.followed ? (
             <button
               disabled={followingInProgress.some(id => id === user.id)}
               onClick={() => {
-                unfollow(user.id)
+                follow(user.id)
               }}
             >
               Unfollow
@@ -43,7 +43,7 @@ const User: React.FC<PropsType> = ({
             <button
               disabled={followingInProgress.some(id => id === user.id)}
               onClick={() => {
-                follow(user.id)
+                unfollow(user.id)
               }}
             >
               Follow

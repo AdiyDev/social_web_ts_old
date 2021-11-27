@@ -5,6 +5,7 @@ import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 import userPhotoEmpty from '../../../assets/images/userPhotoEmpty.jpg'
 import ProfileDataForm from './ProfileDataForm'
 import { ContactsType, ProfileType } from '../../../types/types'
+import { Image } from 'antd'
 
 type PropsType = {
   profile: ProfileType | null
@@ -50,7 +51,11 @@ const ProfileInfo: React.FC<PropsType> = ({
         ></img>
       </li>
       <li className={s.descriptionBlock}>
-        <img src={profile.photos.large || userPhotoEmpty} alt="" />
+        <Image
+          src={profile.photos.large || userPhotoEmpty}
+          style={{ width: '300px', height: '300px' }}
+          alt=""
+        />
         {isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
 
         {editMode ? (
