@@ -22,11 +22,12 @@ import { initializeApp } from './redux/app-reducer'
 import { compose } from 'redux'
 import Preloader from './components/common/Preloader/Preloader'
 import store, { AppStateType } from './redux/redux-store'
-import { Layout, Menu, Breadcrumb, Divider } from 'antd'
+import { Layout, Menu, Breadcrumb, Result, Button } from 'antd'
 import {
   UserOutlined,
   LaptopOutlined,
-  SettingOutlined
+  SettingOutlined,
+  SmileOutlined
 } from '@ant-design/icons'
 
 const { SubMenu } = Menu
@@ -116,8 +117,14 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   </Menu.Item>
                   <Menu.Item key="12">option12</Menu.Item>
                 </SubMenu>
-                <Divider />
-                <Route path="" render={() => <FriendsContainer />} />
+
+                <SubMenu
+                  key="sub4"
+                  icon={<SmileOutlined />}
+                  title="Best Friend"
+                >
+                  <FriendsContainer />
+                </SubMenu>
               </Menu>
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
@@ -152,7 +159,18 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   <Route path="/login" render={() => <LoginPage />} />
                   <Route
                     path="*"
-                    render={() => <div>404 NOT FOUND _ERROR</div>}
+                    render={() => (
+                      <Result
+                        status="404"
+                        title="404"
+                        subTitle="Страницы не существует, возможно появится позже"
+                        extra={
+                          <Link to="/">
+                            <Button type="primary">Back Home</Button>
+                          </Link>
+                        }
+                      />
+                    )}
                   />
                 </Switch>
               </Suspense>
