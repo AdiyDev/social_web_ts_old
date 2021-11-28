@@ -52,8 +52,8 @@ const Message: React.FC<{ message: ChatMessageType }> = ({ message }) => {
     <div>
       <img style={{ width: '30px', height: 30 }} src={message?.photo} alt="" />
       <br />
-      <i>{message?.userId}</i>
       <b>{message?.userName}</b>
+      <sup>{message?.userId}</sup>
       <br />
       {message?.message}
       <hr />
