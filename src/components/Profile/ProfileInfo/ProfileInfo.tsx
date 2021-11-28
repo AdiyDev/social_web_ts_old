@@ -114,7 +114,10 @@ const ProfileData: React.FC<ProfileDataPropsType> = ({
         <b>About me</b>: {profile.aboutMe}
       </div>
       <div>
-        <b>Contacts</b>:{' '}
+        <b>My professional skills</b>: {profile.lookingForAJobDescription}
+      </div>
+      <div>
+        <b>Contacts</b>:
         {Object.keys(profile.contacts).map(key => {
           return (
             <Contact

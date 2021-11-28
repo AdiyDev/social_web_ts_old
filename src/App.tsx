@@ -40,6 +40,11 @@ const ProfileContainer = React.lazy(
   () => import('./components/Profile/ProfileContainer')
 )
 
+const ChatPage = React.lazy(() =>
+  import('./pages/Chat/ChatPage').then(module => ({
+    default: module.ChatPage
+  }))
+)
 type MapPropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
   initializeApp: () => void
@@ -79,8 +84,8 @@ class App extends Component<MapPropsType & DispatchPropsType> {
             <Sider className="site-layout-background" width={200}>
               <Menu
                 mode="inline"
-                defaultSelectedKeys={['2']}
-                defaultOpenKeys={['sub1']}
+                // defaultSelectedKeys={['2']}
+                // defaultOpenKeys={['sub1']}
                 style={{ height: '100%' }}
               >
                 <SubMenu key="sub1" icon={<UserOutlined />} title="My profile">
@@ -115,7 +120,9 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   <Menu.Item key="11">
                     <Link to="/settings">Settings</Link>
                   </Menu.Item>
-                  <Menu.Item key="12">option12</Menu.Item>
+                  <Menu.Item key="12">
+                    <Link to="/chat">Chat</Link>
+                  </Menu.Item>
                 </SubMenu>
 
                 <SubMenu
@@ -157,6 +164,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                   />
                   <Route path="/settings" render={() => <Settings />} />
                   <Route path="/login" render={() => <LoginPage />} />
+                  <Route path="/chat" render={() => <ChatPage />} />
                   <Route
                     path="*"
                     render={() => (
