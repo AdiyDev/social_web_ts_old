@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { ChatMessageType } from '../../api/chat-api'
+import { ChatMessageAPIType } from '../../api/chat-api'
 import {
   sendMessagesListening,
   startMessagesListening,
@@ -67,14 +67,14 @@ const Messages: React.FC = () => {
       style={{ height: '400px', overflowY: 'auto' }}
       onScroll={scrollHandler}
     >
-      {messages.map((m, index: number) => (
-        <Message key={index} message={m} />
+      {messages.map(m => (
+        <Message key={m.id} message={m} />
       ))}
       <div ref={messagesAnchorRef}></div>
     </div>
   )
 }
-const Message: React.FC<{ message: ChatMessageType }> = React.memo(
+const Message: React.FC<{ message: ChatMessageAPIType }> = React.memo(
   ({ message }) => {
     return (
       <div>
