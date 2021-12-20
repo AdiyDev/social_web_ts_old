@@ -12,7 +12,7 @@ import { Header } from './components/Header/Header'
 import {
   Route,
   withRouter,
-  BrowserRouter,
+  HashRouter,
   Redirect,
   Switch,
   Link
@@ -202,11 +202,11 @@ const AppContainer = compose<React.ComponentType>(
 
 const SocialWebApp: React.FC = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
