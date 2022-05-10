@@ -23,6 +23,19 @@
             "internalConsoleOptions": "neverOpen",
             "env": { "CI": "true" },
             "disableOptimisticBPs": true
+          },
+          {
+            "name": "CRA Single Test",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+            "args": ["test", "--runInBand", "--no-cache", "--watchAll=false", "--runTestsByPath", "${relativeFile}"],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": { "CI": "true" },
+            "disableOptimisticBPs": true
           }
     ]
 }
