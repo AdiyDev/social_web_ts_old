@@ -1,2 +1,2 @@
-# react_social_ts
-deprecated
+# react_social_ts deprecated
+
