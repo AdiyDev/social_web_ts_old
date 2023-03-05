@@ -15,7 +15,8 @@ import {
   Redirect,
   Switch,
   Link,
-  HashRouter
+  HashRouter,
+  BrowserRouter
 } from 'react-router-dom'
 import { connect, Provider } from 'react-redux'
 import { initializeApp } from './redux/app-reducer'
@@ -202,11 +203,11 @@ const AppContainer = compose<React.ComponentType>(
 
 const SocialWebApp: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
