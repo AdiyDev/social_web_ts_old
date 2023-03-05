@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/social_web_ts_old/static/css/main.f12c0645.chunk.css",
-    "main.js": "/social_web_ts_old/static/js/main.d135b18e.chunk.js",
-    "main.js.map": "/social_web_ts_old/static/js/main.d135b18e.chunk.js.map",
-    "runtime-main.js": "/social_web_ts_old/static/js/runtime-main.f7f27434.js",
-    "runtime-main.js.map": "/social_web_ts_old/static/js/runtime-main.f7f27434.js.map",
+    "main.js": "/social_web_ts_old/static/js/main.0840227b.chunk.js",
+    "main.js.map": "/social_web_ts_old/static/js/main.0840227b.chunk.js.map",
+    "runtime-main.js": "/social_web_ts_old/static/js/runtime-main.1ce17b39.js",
+    "runtime-main.js.map": "/social_web_ts_old/static/js/runtime-main.1ce17b39.js.map",
     "static/css/2.2b8316e7.chunk.css": "/social_web_ts_old/static/css/2.2b8316e7.chunk.css",
-    "static/js/2.cf1c6e47.chunk.js": "/social_web_ts_old/static/js/2.cf1c6e47.chunk.js",
-    "static/js/2.cf1c6e47.chunk.js.map": "/social_web_ts_old/static/js/2.cf1c6e47.chunk.js.map",
+    "static/js/2.2f1dfc4b.chunk.js": "/social_web_ts_old/static/js/2.2f1dfc4b.chunk.js",
+    "static/js/2.2f1dfc4b.chunk.js.map": "/social_web_ts_old/static/js/2.2f1dfc4b.chunk.js.map",
     "static/css/3.6cd7709b.chunk.css": "/social_web_ts_old/static/css/3.6cd7709b.chunk.css",
     "static/js/3.11352e13.chunk.js": "/social_web_ts_old/static/js/3.11352e13.chunk.js",
     "static/js/3.11352e13.chunk.js.map": "/social_web_ts_old/static/js/3.11352e13.chunk.js.map",
     "static/js/4.fce0e4a2.chunk.js": "/social_web_ts_old/static/js/4.fce0e4a2.chunk.js",
     "static/js/4.fce0e4a2.chunk.js.map": "/social_web_ts_old/static/js/4.fce0e4a2.chunk.js.map",
     "static/css/5.e7931701.chunk.css": "/social_web_ts_old/static/css/5.e7931701.chunk.css",
-    "static/js/5.fcc08aff.chunk.js": "/social_web_ts_old/static/js/5.fcc08aff.chunk.js",
-    "static/js/5.fcc08aff.chunk.js.map": "/social_web_ts_old/static/js/5.fcc08aff.chunk.js.map",
+    "static/js/5.5ed39324.chunk.js": "/social_web_ts_old/static/js/5.5ed39324.chunk.js",
+    "static/js/5.5ed39324.chunk.js.map": "/social_web_ts_old/static/js/5.5ed39324.chunk.js.map",
     "static/js/6.f23b0190.chunk.js": "/social_web_ts_old/static/js/6.f23b0190.chunk.js",
     "static/js/6.f23b0190.chunk.js.map": "/social_web_ts_old/static/js/6.f23b0190.chunk.js.map",
     "index.html": "/social_web_ts_old/index.html",
@@ -23,16 +23,16 @@
     "static/css/3.6cd7709b.chunk.css.map": "/social_web_ts_old/static/css/3.6cd7709b.chunk.css.map",
     "static/css/5.e7931701.chunk.css.map": "/social_web_ts_old/static/css/5.e7931701.chunk.css.map",
     "static/css/main.f12c0645.chunk.css.map": "/social_web_ts_old/static/css/main.f12c0645.chunk.css.map",
-    "static/js/2.cf1c6e47.chunk.js.LICENSE.txt": "/social_web_ts_old/static/js/2.cf1c6e47.chunk.js.LICENSE.txt",
+    "static/js/2.2f1dfc4b.chunk.js.LICENSE.txt": "/social_web_ts_old/static/js/2.2f1dfc4b.chunk.js.LICENSE.txt",
     "static/media/preloader.6fa5554b.svg": "/social_web_ts_old/static/media/preloader.6fa5554b.svg",
     "static/media/user.94b78e6a.png": "/social_web_ts_old/static/media/user.94b78e6a.png",
     "static/media/userPhotoEmpty.b6e40cdf.jpg": "/social_web_ts_old/static/media/userPhotoEmpty.b6e40cdf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f7f27434.js",
+    "static/js/runtime-main.1ce17b39.js",
     "static/css/2.2b8316e7.chunk.css",
-    "static/js/2.cf1c6e47.chunk.js",
+    "static/js/2.2f1dfc4b.chunk.js",
     "static/css/main.f12c0645.chunk.css",
-    "static/js/main.d135b18e.chunk.js"
+    "static/js/main.0840227b.chunk.js"
   ]
 }
