@@ -1,0 +1,13 @@
+.git
+.gitignore
+Dockerfile.preprod
+.DS_Store
+.vscode
+*.md
+README.md
+npm-debug.log
+.coverage
+.coverage.*
+.env
+.aws
+.nvmrc
